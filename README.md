@@ -35,7 +35,7 @@ The **Time Reflection App** rethinks timekeeping through an emotional lens — r
 
 ## 📁 Project Structure
 
-````text
+```text
 src/
 ├── components/       # Reusable UI components (MoodButton, InsightCard, etc.)
 ├── pages/            # Main views like Reflection and Insights
@@ -43,6 +43,7 @@ src/
 ├── assets/           # Fonts, icons, images
 ├── App.vue           # Root layout and structure
 └── main.js           # Entry point for mounting the app
+```
 
 ---
 
@@ -70,7 +71,7 @@ npm install
 
 # Run the development server
 npm run dev
-````
+```
 
 Then open http://localhost:5173 in your browser to view the app.
 
