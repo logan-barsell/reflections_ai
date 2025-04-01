@@ -35,13 +35,14 @@ The **Time Reflection App** rethinks timekeeping through an emotional lens — r
 
 ## 📁 Project Structure
 
+````text
 src/
-├── components/ # Reusable UI components (MoodButton, InsightCard, etc.)
-├── pages/ # Main views like Reflection and Insights
-├── data/ # Mock data files and static JSON
-├── assets/ # Fonts, icons, images
-├── App.vue # Root layout and structure
-└── main.js # Entry point for mounting the app
+├── components/       # Reusable UI components (MoodButton, InsightCard, etc.)
+├── pages/            # Main views like Reflection and Insights
+├── data/             # Mock data files and static JSON
+├── assets/           # Fonts, icons, images
+├── App.vue           # Root layout and structure
+└── main.js           # Entry point for mounting the app
 
 ---
 
@@ -61,15 +62,15 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/time-reflection-app.git
-cd time-reflection-app
+git clone https://github.com/logan-barsell/reflection-ai.git
+cd reflection-ai
 
 # Install dependencies
 npm install
 
 # Run the development server
 npm run dev
-```
+````
 
 Then open http://localhost:5173 in your browser to view the app.
 
@@ -77,6 +78,6 @@ Then open http://localhost:5173 in your browser to view the app.
 
 ## 👤 Author
 
-Logan Barsell
-GitHub: @logan-barsell
-Email: loganjbars@gmail.com
+- Logan Barsell
+- GitHub: @logan-barsell
+- Email: loganjbars@gmail.com
