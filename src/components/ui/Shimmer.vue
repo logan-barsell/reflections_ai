@@ -2,7 +2,7 @@
   <transition name="shimmer-fade">
     <div
       v-if="show"
-      class="fixed inset-0 z-50 bg-gradient-to-br from-primary via-accent to-white animate-shimmer"
+      class="fixed inset-0 z-50 animate-shimmer"
     />
   </transition>
 </template>

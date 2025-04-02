@@ -8,7 +8,9 @@
       @click="selectMood(mood.value)"
       :class="[
         'flex items-center h-[38px] px-[38px] rounded-[8px] border text-bodyMed transition',
-        selected === mood.value
+        displayOnly
+          ? ''
+          : selected === mood.value
           ? 'bg-[rgba(217,217,217,0.5)] border-border'
           : 'bg-transparent border-border hover:bg-[rgba(217,217,217,0.5)]',
       ]"
@@ -24,6 +26,7 @@ import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   selected: String,
+  displayOnly: Boolean,
 });
 
 const emit = defineEmits(['select']);

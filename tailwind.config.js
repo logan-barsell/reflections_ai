@@ -18,6 +18,7 @@ export default {
       fontSize: {
         h1: ['32px', { fontWeight: '700' }],
         h2: ['24px', { fontWeight: '300' }],
+        h2Bold: ['24px', { fontWeight: '600' }],
         h3: ['20px', { fontWeight: '600' }],
         time: ['64px', { fontWeight: '700' }],
         bodyBold: ['16px', { fontWeight: '700' }],
@@ -29,6 +30,8 @@ export default {
         bodyMed: ['16px', { fontWeight: '500' }],
         bodyLight: ['12px', { fontWeight: '300' }],
         label: ['14px', { fontWeight: '500' }],
+        labelBold: ['14px', { fontWeight: '700' }],
+        labelLight: ['14px', { fontWeight: '300' }],
         subheader: ['20px', { fontWeight: '300' }],
       },
     },

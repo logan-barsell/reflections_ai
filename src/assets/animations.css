@@ -8,24 +8,30 @@
   opacity: 0;
 }
 
-/* Shimmer Animation */
 @keyframes shimmer {
   0% {
+    transform: translateX(-100%) skewX(-20deg);
     opacity: 0;
-    transform: scale(1) translateY(0);
   }
-  50% {
+  30% {
     opacity: 1;
-    transform: scale(1.05) translateY(-4px);
   }
   100% {
+    transform: translateX(100%) skewX(-20deg);
     opacity: 0;
-    transform: scale(1) translateY(0);
   }
 }
 
 .animate-shimmer {
-  animation: shimmer 1.2s ease-out forwards;
+  animation: shimmer 0.8s ease-out forwards;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  filter: blur(8px);
+  mix-blend-mode: screen;
 }
 
 .shimmer-fade-enter-active,
