@@ -17,7 +17,7 @@ export default {
       },
       fontSize: {
         h1: ['32px', { fontWeight: '700' }],
-        h2: ['24px', { fontWeight: '600' }],
+        h2: ['24px', { fontWeight: '300' }],
         h3: ['20px', { fontWeight: '600' }],
         time: ['64px', { fontWeight: '700' }],
         bodyBold: ['16px', { fontWeight: '700' }],

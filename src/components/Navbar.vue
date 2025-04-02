@@ -1,11 +1,9 @@
 <template>
-  <header class="w-full bg-background border-b border-border pb-4">
+  <header class="w-full bg-background pb-4">
     <h1 class="text-h1 text-text text-center py-6">Reflections AI</h1>
 
     <!-- Dynamic Nav Layout -->
-    <nav
-      class="relative flex justify-between items-center max-w-3xl mx-auto px-4"
-    >
+    <nav class="relative flex justify-between items-center max-w-3xl mx-auto">
       <!-- Left Nav Item -->
       <transition
         name="slide-fade-side"
@@ -65,7 +63,7 @@ const route = useRoute();
 
 const navItems = [
   { label: 'Reflect', to: '/reflect' },
-  { label: 'Summary', to: '/summary' },
+  { label: 'Daily Summary', to: '/summary' },
   { label: 'Insights', to: '/insights' },
 ];
 
