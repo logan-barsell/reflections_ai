@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mt-reflectionCardTop max-w-reflection max-w-full">
+  <div class="relative mt-reflectionCardTop max-w-reflection w-full">
     <!-- Top Left: Time -->
     <p class="absolute -top-reflectionLabelOffset left-0 text-h3">
       {{ time }}
@@ -8,7 +8,7 @@
     <!-- Top Right: Mood Label (non-clickable) -->
     <div class="absolute -top-moodTagOffset right-0">
       <div
-        class="flex items-center h-[38px] p-[10px] rounded-[8px] text-bodyMed bg-transparent cursor-default select-none"
+        class="flex items-center h-[38px] px-[10px] text-bodyMed bg-transparent cursor-default select-none"
       >
         <span class="mr-2 text-lg">{{ mood.emoji }}</span>
         <span>{{ mood.label }}</span>

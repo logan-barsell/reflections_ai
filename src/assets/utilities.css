@@ -53,3 +53,7 @@
 .mood-selector-button {
   @apply flex items-center h-[38px] px-[38px] rounded-[8px] border text-bodyMed transition;
 }
+
+.submit-button {
+  @apply flex items-center justify-center rounded-md transition hover:opacity-90;
+}

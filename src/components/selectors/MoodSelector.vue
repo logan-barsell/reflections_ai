@@ -1,26 +1,20 @@
 <template>
   <div class="selector-grid gap-x-[11px] gap-y-[13px] max-w-[689px]">
-    <button
+    <MoodButton
       v-for="mood in moods"
       :key="mood.value"
-      @click="selectMood(mood.value)"
-      :class="[
-        'mood-selector-button',
-        displayOnly
-          ? ''
-          : selected === mood.value
-          ? 'bg-[rgba(217,217,217,0.5)] border-border'
-          : 'bg-transparent border-border hover:bg-[rgba(217,217,217,0.5)]',
-      ]"
-    >
-      <span class="mr-2 text-lg">{{ mood.emoji }}</span>
-      <span>{{ mood.label }}</span>
-    </button>
+      :label="mood.label"
+      :icon="mood.emoji"
+      :isSelected="selected === mood.value"
+      :displayOnly="displayOnly"
+      @click="() => selectMood(mood.value)"
+    />
   </div>
 </template>
 
 <script setup>
 import { moods } from '../../constants/meta';
+import MoodButton from '../ui/buttons/MoodButton.vue';
 
 const props = defineProps({
   selected: String,
@@ -28,8 +22,5 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['select']);
-
-const selectMood = value => {
-  emit('select', value);
-};
+const selectMood = value => emit('select', value);
 </script>

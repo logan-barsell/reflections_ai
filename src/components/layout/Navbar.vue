@@ -1,6 +1,6 @@
 <template>
   <header class="w-full bg-background pb-4">
-    <h1 class="text-h1 text-text text-center py-6">Reflections AI</h1>
+    <h1 class="text-h1 text-center py-6">Reflections AI</h1>
 
     <!-- Dynamic Nav Layout -->
     <nav class="relative flex justify-between items-center max-w-3xl mx-auto">

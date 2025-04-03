@@ -44,7 +44,7 @@ export default {
         reflectionCard: '480px',
         reflectionCardTop: '20px',
         reflectionLabelOffset: '28px',
-        moodTagOffset: '36px',
+        moodTagOffset: '32px',
         reflectionPaddingX: '25px',
         reflectionPaddingBottom: '25px',
         reflectionPaddingTop: '5px',

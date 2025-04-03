@@ -51,12 +51,11 @@
 
     <!-- Log Reflection Button -->
     <div class="mt-buttonTop flex justify-center">
-      <button
-        class="h-[48px] w-[393px] rounded-md bg-text text-background text-h2 flex items-center justify-center transition hover:opacity-90"
+      <SubmitButton
+        icon="💭"
+        label="Log Reflection"
         @click="submitReflection"
-      >
-        💭&nbsp;&nbsp;&nbsp;Log Reflection
-      </button>
+      />
     </div>
     <Shimmer :show="shimmerActive" />
     <ErrorMessage :error="errorMessage" />
@@ -68,7 +67,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { MoodSelector, CategorySelector } from '../components/selectors';
-import { ErrorMessage, Shimmer } from '../components/ui';
+import { ErrorMessage, Shimmer, SubmitButton } from '../components/ui';
 import { useTime, useReflection } from '../composables';
 
 const router = useRouter();

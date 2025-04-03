@@ -1,4 +1,4 @@
-# 🧘‍♂️ Time Reflection App
+# 🧘‍♂️ Reflection AI
 
 A calm, minimalist journaling experience designed to help users reflect on how they spend their time and how it makes them feel. This project was built as part of a take-home assignment for the Gun.io Design Engineer position.
 
@@ -6,7 +6,7 @@ A calm, minimalist journaling experience designed to help users reflect on how t
 
 ## ✨ Overview
 
-The **Time Reflection App** rethinks timekeeping through an emotional lens — rather than tracking hours, it encourages users to reflect on their activities and moods throughout the day. The interface is zen-inspired, soft, and distraction-free to promote daily engagement and mindful habit formation.
+**Reflection AI** rethinks timekeeping through an emotional lens — rather than tracking hours, it encourages users to reflect on their activities and moods throughout the day. The interface is zen-inspired, soft, and distraction-free to promote daily engagement and mindful habit formation.
 
 ---
 
@@ -27,7 +27,7 @@ The **Time Reflection App** rethinks timekeeping through an emotional lens — r
 | Frontend    | [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/)    |
 | Styling     | [Tailwind CSS](https://tailwindcss.com/)                     |
 | Fonts       | [Manrope](https://fonts.google.com/specimen/Manrope)         |
-| Icons       | Native emojis + Lucide/Iconoir for UI elements               |
+| Icons       | Native emojis                                                |
 | State       | Vue reactivity (`ref`, `computed`) + optional `localStorage` |
 | Design Tool | [Figma](https://figma.com/) (hi-fi + lo-fi mockups)          |
 
@@ -37,12 +37,35 @@ The **Time Reflection App** rethinks timekeeping through an emotional lens — r
 
 ```text
 src/
-├── components/       # Reusable UI components (MoodButton, InsightCard, etc.)
-├── pages/            # Main views like Reflection and Insights
-├── data/             # Mock data files and static JSON
-├── assets/           # Fonts, icons, images
-├── App.vue           # Root layout and structure
-└── main.js           # Entry point for mounting the app
+├── components/             # Reusable UI components
+│   ├── cards/              # Card-based views (AISummaryCard, InsightsCard, etc.)
+│   ├── charts/             # Data visualization components (BarGraph)
+│   ├── layout/             # Layout-specific components (Navbar, NavItem)
+│   ├── selectors/          # Mood and category selector buttons
+│   └── ui/                 # Small reusable UI bits (Shimmer, ErrorMessage, etc.)
+│
+├── pages/                  # Main route views (Reflection, Summary, Insights)
+│
+├── composables/            # Reusable logic with Vue composition API
+│   ├── useReflection.ts
+│   ├── useTime.ts
+│   └── useAnimatedValues.ts
+│
+├── constants/              # Shared config/meta values
+│   └── meta.ts             # Moods, moodMap, categories
+│
+├── data/                   # Mock data and static JSON for prototyping
+│   └── dummyData.ts
+│
+├── assets/                 # Fonts, icons, CSS, images
+│   ├── animations.css
+│   ├── transitions.css
+│   ├── utilities.css
+│   └── ...
+│
+├── App.vue                 # Root layout component
+└── main.js                 # App entry point
+
 ```
 
 ---

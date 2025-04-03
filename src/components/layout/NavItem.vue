@@ -5,7 +5,7 @@
     :class="[
       active
         ? 'text-muted line-through decoration-[0.5px]'
-        : 'text-text hover:text-muted',
+        : 'hover:text-muted',
     ]"
   >
     {{ label }}
