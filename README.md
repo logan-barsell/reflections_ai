@@ -12,9 +12,9 @@ A calm, minimalist journaling experience designed to help users reflect on how t
 
 ## 🖼️ Screenshots
 
-| Reflection Page                                    | Daily Summary                                | Weekly Insights                                |
-| -------------------------------------------------- | -------------------------------------------- | ---------------------------------------------- |
-| ![Reflection](./public/screenshots/reflection.png) | ![Summary](./public/screenshots/summary.png) | ![Insights](./public/screenshots/insights.png) |
+| Reflection Page                                        | Daily Summary                                    | Weekly Insights                                    |
+| ------------------------------------------------------ | ------------------------------------------------ | -------------------------------------------------- |
+| ![Reflection](./public/screenshots/ReflectionPage.png) | ![Summary](./public/screenshots/SummaryPage.png) | ![Insights](./public/screenshots/InsightsPage.png) |
 
 <sub>📸 _Demo content powered by localStorage + mock data_</sub>
 
