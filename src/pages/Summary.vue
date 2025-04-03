@@ -1,48 +1,34 @@
 <script setup>
-import AISummaryCard from '../components/cards/AISummaryCard.vue';
-import ReflectionLogCard from '../components/cards/ReflectionLogCard.vue';
-import { formatFullDate, formatTime } from '../utils/formatDate';
-import { capitalize } from '../utils/string';
+import { AISummaryCard, ReflectionLogCard } from '../components/cards';
+import { moodMap } from '../constants/meta';
+import { formatFullDate, formatTime, capitalize } from '../utils';
+import { dummyReflections, dailySummary } from '../data/dummyData';
 
 import { ref, onMounted } from 'vue';
 
 const today = formatFullDate();
 
-const aiSummary = `☀️ “You started your day early and strong, showing high productivity and planning skills in the morning. Your energy dipped slightly after lunch, but you bounced back quickly—likely thanks to that second coffee. Today was well-balanced between focused work and restful moments, with your peak energy occurring mid-afternoon.”
-
-🧠 Reflections:
-• Your mornings appear to be your most focused and structured.
-• Consider lighter lunches if you notice energy dips midday.
-• Coffee is a reliable tool—but might want to pace it out!`;
-
-// Helper to parse mood value into emoji + label
-const moodMap = {
-  happy: { emoji: '🙂', label: 'Happy' },
-  relaxed: { emoji: '😌', label: 'Relaxed' },
-  focused: { emoji: '🧐', label: 'Focused' },
-  stressed: { emoji: '🥵', label: 'Stressed' },
-  sad: { emoji: '😭', label: 'Sad' },
-  energized: { emoji: '🤩', label: 'Energized' },
-  distracted: { emoji: '🥸', label: 'Distracted' },
-  neutral: { emoji: '😶', label: 'Neutral' },
-};
-
 const reflections = ref([]);
 
 onMounted(() => {
   const stored = localStorage.getItem('reflections');
-  reflections.value = stored ? JSON.parse(stored) : [];
+  reflections.value = stored
+    ? [...JSON.parse(stored), ...dummyReflections]
+    : dummyReflections;
 });
 </script>
 
 <template>
   <div class="summary-page">
-    <div class="pt-[100px] flex flex-col items-center">
-      <p class="text-[12px] font-bold text-text">
+    <div class="pt-[100px] page-wrapper">
+      <p class="text-smallBold">
         {{ today }}
       </p>
 
-      <AISummaryCard :summary="aiSummary" />
+      <AISummaryCard
+        :summary="dailySummary.summary"
+        :reflections="dailySummary.reflections"
+      />
     </div>
 
     <!-- Reflection Logs -->
@@ -53,7 +39,7 @@ onMounted(() => {
       <div
         v-for="(entry, index) in reflections"
         :key="entry.timestamp"
-        class="flex flex-col items-center"
+        class="page-wrapper"
       >
         <ReflectionLogCard
           :time="formatTime(entry.timestamp)"
@@ -64,7 +50,7 @@ onMounted(() => {
 
         <!-- Divider + spacing, except after last item -->
         <template v-if="index !== reflections.length - 1">
-          <div class="my-[40px] w-[770px] border-t border-border" />
+          <div class="my-dividerGap w-divider border-t border-border" />
         </template>
       </div>
     </div>

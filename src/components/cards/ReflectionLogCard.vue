@@ -1,14 +1,14 @@
 <template>
-  <div class="relative mt-[20px] w-[480px] max-w-full">
+  <div class="relative mt-reflectionCardTop max-w-reflection max-w-full">
     <!-- Top Left: Time -->
-    <p class="absolute -top-[28px] left-0 text-h3 text-text">
+    <p class="absolute -top-reflectionLabelOffset left-0 text-h3">
       {{ time }}
     </p>
 
     <!-- Top Right: Mood Label (non-clickable) -->
-    <div class="absolute -top-[36px] right-0">
+    <div class="absolute -top-moodTagOffset right-0">
       <div
-        class="flex items-center h-[38px] p-[10px] rounded-[8px] text-bodyMed text-text bg-transparent cursor-default select-none"
+        class="flex items-center h-[38px] p-[10px] rounded-[8px] text-bodyMed bg-transparent cursor-default select-none"
       >
         <span class="mr-2 text-lg">{{ mood.emoji }}</span>
         <span>{{ mood.label }}</span>
@@ -17,7 +17,7 @@
 
     <!-- Card Body -->
     <div
-      class="rounded-[12px] bg-primary px-[25px] pb-[25px] pt-[5px] text-text"
+      class="rounded-[12px] bg-primary px-reflectionPaddingX pb-reflectionPaddingBottom pt-reflectionPaddingTop"
     >
       <!-- Category Title -->
       <p class="text-bodyBold text-center">

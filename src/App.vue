@@ -13,7 +13,7 @@ watch(
     shimmer.value = true;
     setTimeout(() => {
       shimmer.value = false;
-    }, 2000); // match shimmer animation duration
+    }, 1000);
   },
   { immediate: true }
 );

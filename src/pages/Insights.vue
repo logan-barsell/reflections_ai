@@ -1,9 +1,46 @@
 <template>
-  <div class="space-y-4">
-    <h2 class="text-h2 font-semibold">Insights</h2>
+  <div class="py-[80px] page-wrapper">
+    <!-- Weekly Header -->
+    <h2 class="section-title">Weekly Insights</h2>
+
+    <!-- Tip of the Week -->
+    <div class="mt-[52px] text-center">
+      <p class="text-bodySemi">💡 Tip of the Week</p>
+      <p class="mt-3 section-description w-insights">
+        {{ weeklyTip?.content }}
+      </p>
+    </div>
+
+    <!-- Insight Cards -->
+    <div class="mt-cardTop card-wrapper max-w-insights">
+      <InsightsCard
+        title="Activities"
+        :summary="insights.activity.summary"
+        :data="insights.activity.data"
+        :suggestion="insights.activity.suggestion"
+      />
+    </div>
+
+    <div class="mt-cardGap w-full max-w-insights">
+      <InsightsCard
+        title="Mood"
+        :summary="insights.mood.summary"
+        :data="insights.mood.data"
+        :suggestion="insights.mood.suggestion"
+      />
+    </div>
+
+    <!-- Habit Streak Section -->
+    <div class="mt-streakTop text-center px-4 max-w-insights">
+      <h1 class="text-h1 mb-[7px]">{{ streak.header }}</h1>
+      <p class="text-subheader">
+        {{ streak.subheader }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script setup>
-// Future logic goes here
+import InsightsCard from '../components/cards/InsightsCard.vue';
+import { weeklyTip, insights, streak } from '../data/dummyData';
 </script>

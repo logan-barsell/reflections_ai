@@ -1,0 +1,55 @@
+/* === Custom Layout Utilities === */
+
+/* PAGE/SECTION */
+.page-wrapper {
+  @apply flex flex-col items-center;
+}
+
+.section-title {
+  @apply text-h2Bold text-center;
+}
+
+.section-subtitle {
+  @apply text-bodySemi text-center;
+}
+
+.section-description {
+  @apply text-bodyLight text-center;
+}
+
+/* CARDS */
+.card-container {
+  @apply w-full rounded-lg bg-accent p-5;
+}
+
+.card-wrapper {
+  @apply w-full max-w-insights;
+}
+
+.card-header {
+  @apply text-h2Bold text-center mb-2;
+}
+
+.card-summary {
+  @apply text-bodyMed mb-8;
+}
+
+.card-suggestion-label {
+  @apply text-labelBold mr-2 whitespace-nowrap;
+}
+
+.card-suggestion-text {
+  @apply text-label;
+}
+
+/* SELECTORS */
+.selector-grid {
+  @apply flex flex-wrap justify-center;
+}
+
+.category-selector-button {
+  @apply h-[48px] px-[30px] rounded-[8px] border text-h2 transition;
+}
+.mood-selector-button {
+  @apply flex items-center h-[38px] px-[38px] rounded-[8px] border text-bodyMed transition;
+}

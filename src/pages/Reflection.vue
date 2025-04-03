@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[120px] pb-[96px] flex flex-col items-center">
+  <div class="pt-reflectionPageTop pb-reflectionPageBottom page-wrapper">
     <!-- Time Display -->
     <transition
       name="time-fade-slide"
@@ -14,31 +14,27 @@
     </transition>
 
     <!-- 13px Spacer -->
-    <div class="mt-[13px]">
-      <h2 class="text-h2 text-text text-center">
-        How have you spent your time today?
-      </h2>
+    <div class="mt-promptSpacer">
+      <h2 class="text-h2 text-center">How have you spent your time today?</h2>
     </div>
 
     <!-- Prompt Text -->
     <div class="mt-[14px]">
-      <p class="text-bodySemi text-text text-center">
-        Write your reflection...
-      </p>
+      <p class="section-subtitle">Write your reflection...</p>
     </div>
 
     <!-- Multiline Reflection Input -->
-    <div class="mt-[12px]">
+    <div class="mt-inputTop">
       <textarea
         v-model="reflectionText"
-        class="w-[563px] max-w-full resize-none rounded-[12px] border border-border bg-transparent px-4 py-2 text-[15px] text-text transition focus:outline-none hover:border-accent focus:border-accent"
+        class="w-textArea max-w-full resize-none rounded-lg border border-border bg-transparent px-4 py-2 text-[15px] transition focus:outline-none hover:border-accent focus:border-accent"
         style="height: 39px"
         @input="autoGrow"
       />
     </div>
 
     <!-- Mood Selector -->
-    <div class="mt-[48px] flex justify-center">
+    <div class="mt-selectorBtnTop flex justify-center">
       <MoodSelector
         :selected="selectedMood"
         @select="handleMoodSelect"
@@ -46,7 +42,7 @@
     </div>
 
     <!-- Category Selector -->
-    <div class="mt-[48px] flex justify-center">
+    <div class="mt-selectorBtnTop flex justify-center">
       <CategorySelector
         :selected="selectedCategory"
         @select="handleCategorySelect"
@@ -54,7 +50,7 @@
     </div>
 
     <!-- Log Reflection Button -->
-    <div class="mt-[43px] flex justify-center">
+    <div class="mt-buttonTop flex justify-center">
       <button
         class="h-[48px] w-[393px] rounded-md bg-text text-background text-h2 flex items-center justify-center transition hover:opacity-90"
         @click="submitReflection"
@@ -69,13 +65,11 @@
 
 <script setup>
 import { ref } from 'vue';
-import MoodSelector from '../components/MoodSelector.vue';
-import CategorySelector from '../components/CategorySelector.vue';
-import ErrorMessage from '../components/ui/ErrorMessage.vue';
-import Shimmer from '../components/ui/Shimmer.vue';
-import { useTime } from '../composables/useTime';
-import { useReflection } from '../composables/useReflection';
 import { useRouter } from 'vue-router';
+
+import { MoodSelector, CategorySelector } from '../components/selectors';
+import { ErrorMessage, Shimmer } from '../components/ui';
+import { useTime, useReflection } from '../composables';
 
 const router = useRouter();
 const shimmerActive = ref(false);
