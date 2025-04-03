@@ -31,16 +31,19 @@
     </div>
 
     <!-- Habit Streak Section -->
-    <div class="mt-streakTop text-center px-4 max-w-insights">
-      <h1 class="text-h1 mb-[7px]">{{ streak.header }}</h1>
-      <p class="text-subheader">
-        {{ streak.subheader }}
-      </p>
-    </div>
+    <LogRevealWrapper :delay="500">
+      <div class="mt-streakTop text-center px-4 max-w-insights">
+        <h1 class="text-h1 mb-[7px]">{{ streak.header }}</h1>
+        <p class="text-subheader">
+          {{ streak.subheader }}
+        </p>
+      </div>
+    </LogRevealWrapper>
   </div>
 </template>
 
 <script setup>
 import InsightsCard from '../components/cards/InsightsCard.vue';
+import { LogRevealWrapper } from '../components/ui';
 import { weeklyTip, insights, streak } from '../data/dummyData';
 </script>
