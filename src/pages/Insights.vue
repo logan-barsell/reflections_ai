@@ -1,5 +1,5 @@
 <template>
-  <div class="py-[80px] page-wrapper">
+  <div class="sm:py-[80px] py-[40px] page-wrapper">
     <!-- Weekly Header -->
     <h2 class="section-title">Weekly Insights</h2>
 

@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template>
   <div class="summary-page">
-    <div class="pt-[100px] page-wrapper">
+    <div class="sm:pt-[100px] pt-[50px] page-wrapper">
       <p class="text-smallBold">
         {{ today }}
       </p>
