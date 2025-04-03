@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import InsightsCard from '../components/cards/InsightsCard.vue';
-import { LogRevealWrapper } from '../components/ui';
-import { weeklyTip, insights, streak } from '../data/dummyData';
+import InsightsCard from '@components/cards/InsightsCard.vue';
+import { LogRevealWrapper } from '@components/ui';
+import { weeklyTip, insights, streak } from '@data/dummyData';
 </script>

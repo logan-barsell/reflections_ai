@@ -63,14 +63,14 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { MoodSelector, CategorySelector } from '../components/selectors';
+import { MoodSelector, CategorySelector } from '@components/selectors';
 import {
   ErrorMessage,
   Shimmer,
   SubmitButton,
   TextAreaInput,
-} from '../components/ui';
-import { useTime, useReflection } from '../composables';
+} from '@components/ui';
+import { useTime, useReflection } from '@composables';
 
 const router = useRouter();
 const shimmerActive = ref(false);

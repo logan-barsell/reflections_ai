@@ -1,4 +1,4 @@
-# 🧘‍♂️ Reflection AI
+# 🧘‍♂️ Reflections AI
 
 A calm, minimalist journaling experience designed to help users reflect on how they spend their time and how it makes them feel. This project was built as part of a take-home assignment for the Gun.io Design Engineer position.
 
@@ -6,7 +6,14 @@ A calm, minimalist journaling experience designed to help users reflect on how t
 
 ## ✨ Overview
 
-**Reflection AI** rethinks timekeeping through an emotional lens — rather than tracking hours, it encourages users to reflect on their activities and moods throughout the day. The interface is zen-inspired, soft, and distraction-free to promote daily engagement and mindful habit formation.
+**Reflections AI** rethinks timekeeping through an emotional lens — rather than tracking hours, it encourages users to reflect on their activities and moods throughout the day. The interface is zen-inspired, soft, and distraction-free to promote daily engagement and mindful habit formation.
+
+---
+
+## 🔗 Live Demo & Design
+
+- 🌐 **Live Site**: [https://reflection-ai.netlify.app](https://reflection-ai.netlify.app)
+- 🎨 **Figma Mockups**: [View on Figma](https://www.figma.com/design/ccDrJ5hsrKoGkyPSd6wDOL/Reflections-AI---Time-Reflections-Application?node-id=0-1&m=dev&t=J2WIkVpMXwfLWfEQ-1)
 
 ---
 

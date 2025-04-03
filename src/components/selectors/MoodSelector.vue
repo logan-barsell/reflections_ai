@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import { moods } from '../../constants/meta';
-import MoodButton from '../ui/buttons/MoodButton.vue';
+import { moods } from '@constants/meta';
+import MoodButton from '@components/ui/buttons/MoodButton.vue';
 
 const props = defineProps({
   selected: String,

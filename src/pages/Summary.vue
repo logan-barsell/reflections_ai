@@ -1,9 +1,9 @@
 <script setup>
-import { AISummaryCard, ReflectionLogCard } from '../components/cards';
-import { LogRevealWrapper } from '../components/ui';
-import { moodMap } from '../constants/meta';
-import { formatFullDate, formatTime, capitalize } from '../utils';
-import { dummyReflections, dailySummary } from '../data/dummyData';
+import { AISummaryCard, ReflectionLogCard } from '@components/cards';
+import { LogRevealWrapper } from '@components/ui';
+import { moodMap } from '@constants/meta';
+import { formatFullDate, formatTime, capitalize } from '@utils';
+import { dummyReflections, dailySummary } from '@data/dummyData';
 
 import { ref, onMounted } from 'vue';
 

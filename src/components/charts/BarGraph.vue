@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { useAnimatedValues } from '../../composables/useAnimatedValues';
+import { useAnimatedValues } from '@composables/useAnimatedValues';
 
 const props = defineProps({
   data: {

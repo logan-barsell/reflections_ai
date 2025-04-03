@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import BarGraph from '../charts/BarGraph.vue';
+import BarGraph from '@components/charts/BarGraph.vue';
 
 const props = defineProps({
   title: String,

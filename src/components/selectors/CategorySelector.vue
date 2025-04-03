@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import { categories } from '../../constants/meta';
-import CategoryButton from '../ui/buttons/CategoryButton.vue';
+import { categories } from '@constants/meta';
+import CategoryButton from '@components/ui/buttons/CategoryButton.vue';
 
 const props = defineProps({
   selected: String,
