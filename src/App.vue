@@ -2,7 +2,7 @@
 import Layout from './layout/Layout.vue';
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import Shimmer from './components/ui/Shimmer.vue';
+import { Shimmer } from './components/ui';
 
 const shimmer = ref(false);
 const router = useRouter();

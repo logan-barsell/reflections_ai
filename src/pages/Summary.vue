@@ -1,5 +1,6 @@
 <script setup>
 import { AISummaryCard, ReflectionLogCard } from '../components/cards';
+import { LogRevealWrapper } from '../components/ui';
 import { moodMap } from '../constants/meta';
 import { formatFullDate, formatTime, capitalize } from '../utils';
 import { dummyReflections, dailySummary } from '../data/dummyData';
@@ -36,23 +37,22 @@ onMounted(() => {
       class="py-[76px]"
       v-if="reflections.length > 0"
     >
-      <div
+      <template
         v-for="(entry, index) in reflections"
         :key="entry.timestamp"
-        class="page-wrapper"
       >
-        <ReflectionLogCard
-          :time="formatTime(entry.timestamp)"
-          :mood="moodMap[entry.mood]"
-          :category="capitalize(entry.category)"
-          :text="entry.text"
-        />
-
-        <!-- Divider + spacing, except after last item -->
-        <template v-if="index !== reflections.length - 1">
-          <div class="my-dividerGap w-divider border-t border-border" />
-        </template>
-      </div>
+        <LogRevealWrapper :delay="index * 100">
+          <ReflectionLogCard
+            :time="formatTime(entry.timestamp)"
+            :mood="moodMap[entry.mood]"
+            :category="capitalize(entry.category)"
+            :text="entry.text"
+          />
+          <div v-if="index !== reflections.length - 1">
+            <div class="my-dividerGap w-divider border-t border-border" />
+          </div>
+        </LogRevealWrapper>
+      </template>
     </div>
     <div
       v-else

@@ -1,8 +1,9 @@
 // Misc
 export { default as ErrorMessage } from './ErrorMessage.vue';
 
-// Effects/Transitions
-export { default as Shimmer } from './Shimmer.vue';
+// Animation
+export { default as Shimmer } from './animation/Shimmer.vue';
+export { default as LogRevealWrapper } from './animation/LogRevealWrapper.vue';
 
 // Buttons
 export { default as CategoryButton } from './buttons/CategoryButton.vue';

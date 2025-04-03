@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mt-reflectionCardTop max-w-reflection w-full">
+  <div class="relative mt-reflectionCardTop max-w-reflection w-full mx-auto">
     <!-- Top Left: Time -->
     <p class="absolute -top-reflectionLabelOffset left-0 text-h3">
       {{ time }}
