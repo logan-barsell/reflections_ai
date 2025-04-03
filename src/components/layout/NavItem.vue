@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="to"
-    class="transition text-bodyBold"
+    class="transition sm:text-bodyBold text-labelSemiBold px-4"
     :class="[
       active
         ? 'text-muted line-through decoration-[0.5px]'

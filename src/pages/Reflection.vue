@@ -7,15 +7,17 @@
     >
       <div
         :key="currentTime"
-        class="w-[290px] h-[87px] text-time text-primary text-center"
+        class="timeDisplay"
       >
         {{ currentTime }}
       </div>
     </transition>
 
     <!-- 13px Spacer -->
-    <div class="mt-promptSpacer">
-      <h2 class="text-h2 text-center">How have you spent your time today?</h2>
+    <div class="sm:mt-promptSpacer">
+      <h2 class="sm:text-h2 text-subheader text-center">
+        How have you spent your time today?
+      </h2>
     </div>
 
     <!-- Prompt Text -->
@@ -29,7 +31,7 @@
     </div>
 
     <!-- Mood Selector -->
-    <div class="mt-selectorBtnTop flex justify-center">
+    <div class="sm:mt-selectorBtnTop mt-moodTagOffset flex justify-center">
       <MoodSelector
         :selected="selectedMood"
         @select="handleMoodSelect"

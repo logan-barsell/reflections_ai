@@ -1,5 +1,7 @@
 <template>
-  <div class="max-w-[527px] selector-grid gap-x-[42px] gap-y-[33px]">
+  <div
+    class="sm:max-w-[527px] max-w-[300px] selector-grid sm:gap-x-[42px] gap-x-[20px] sm:gap-y-[33px] gap-y-[17px]"
+  >
     <CategoryButton
       v-for="category in categories"
       :key="category.value"

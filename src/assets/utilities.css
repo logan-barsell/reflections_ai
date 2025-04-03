@@ -19,7 +19,7 @@
 
 /* CARDS */
 .card-container {
-  @apply w-full rounded-lg bg-accent p-5;
+  @apply w-full rounded-lg bg-accent sm:p-5 p-3;
 }
 
 .card-wrapper {
@@ -27,7 +27,7 @@
 }
 
 .card-header {
-  @apply text-h2Bold text-center mb-2;
+  @apply sm:text-h2Bold text-h3 text-center mb-2;
 }
 
 .card-summary {
@@ -48,10 +48,10 @@
 }
 
 .category-selector-button {
-  @apply h-[48px] px-[30px] rounded-[8px] border text-h2 transition;
+  @apply sm:h-[48px] h-[30px] sm:px-[30px] px-[20px] rounded-[8px] border sm:text-h2 text-bodyLight transition;
 }
 .mood-selector-button {
-  @apply flex items-center h-[38px] px-[38px] rounded-[8px] border text-bodyMed transition;
+  @apply flex items-center sm:h-[38px] h-[30px] sm:px-[38px] px-[27px] rounded-[8px] border sm:text-bodyMed text-label transition;
 }
 
 .submit-button {
@@ -60,4 +60,12 @@
 
 .input {
   @apply rounded-lg border border-border bg-transparent px-4 py-2 text-[15px] text-text transition focus:outline-none hover:border-accent focus:border-accent;
+}
+
+.textarea {
+  @apply sm:w-textAreaLg w-textAreaSm max-w-full resize-none input overflow-hidden;
+}
+
+.timeDisplay {
+  @apply w-full max-w-[290px] h-[87px] text-timeSm sm:text-time text-primary text-center;
 }

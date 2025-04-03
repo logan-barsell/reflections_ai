@@ -8,7 +8,7 @@
     ]"
     @click="$emit('click')"
   >
-    <span class="mr-2 text-lg">{{ icon }}</span>
+    <span class="mr-2 sm:text-lg text-sm">{{ icon }}</span>
     <span>{{ label }}</span>
   </button>
 </template>

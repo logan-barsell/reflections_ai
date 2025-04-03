@@ -1,6 +1,6 @@
 <template>
   <header class="w-full bg-background pb-4">
-    <h1 class="text-h1 text-center py-6">Reflections AI</h1>
+    <h1 class="sm:text-h1 text-h2Bold text-center py-6">Reflections AI</h1>
 
     <!-- Dynamic Nav Layout -->
     <nav class="relative flex justify-between items-center max-w-3xl mx-auto">
@@ -63,7 +63,7 @@ const route = useRoute();
 
 const navItems = [
   { label: 'Reflect', to: '/reflect' },
-  { label: 'Daily Summary', to: '/summary' },
+  { label: 'Summary', to: '/summary' },
   { label: 'Insights', to: '/insights' },
 ];
 

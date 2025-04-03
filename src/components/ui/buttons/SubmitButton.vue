@@ -31,7 +31,7 @@ defineEmits(['click']);
 // Tailwind size map
 const sizes = {
   sm: 'h-[40px] w-[280px] text-bodyMed',
-  md: 'h-[48px] w-[393px] text-h2',
+  md: 'sm:h-[48px] h-[35px] sm:w-[393px] w-[270px] sm:text-h2 text-bodyLight',
   lg: 'h-[56px] w-[460px] text-h1',
 };
 const colors = {
