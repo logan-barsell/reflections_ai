@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex flex-col gap-3">
     <!-- Vertical base line -->
-    <div class="absolute left-[115px] top-[-7px] h-[126px] w-px bg-text" />
+    <div class="absolute left-[115px] top-[-11px] h-[127px] w-px bg-text" />
 
     <div
       v-for="(item, index) in data"

@@ -1,5 +1,5 @@
 <template>
-  <div class="selector-grid gap-x-[11px] gap-y-[13px] max-w-[689px]">
+  <div class="selector-grid gap-x-[11px] gap-y-[13px] w-full max-w-[689px]">
     <MoodButton
       v-for="mood in moods"
       :key="mood.value"

@@ -28,7 +28,7 @@
       <div class="mt-[4px]" />
 
       <!-- Reflection Text -->
-      <p class="text-bodyMed whitespace-pre-line">
+      <p class="text-bodyReg whitespace-pre-line">
         {{ text }}
       </p>
     </div>

@@ -49,7 +49,9 @@ onMounted(() => {
             :text="entry.text"
           />
           <div v-if="index !== reflections.length - 1">
-            <div class="my-dividerGap w-divider border-t border-border" />
+            <div
+              class="my-dividerGap max-w-divider w-full border-t border-border"
+            />
           </div>
         </LogRevealWrapper>
       </template>

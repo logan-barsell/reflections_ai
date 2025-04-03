@@ -1,7 +1,7 @@
 <template>
   <div class="relative mt-aiCardTop max-w-summary w-full">
     <!-- AI Summary Card -->
-    <div class="card-container">
+    <div class="w-full rounded-lg bg-accent py-5 px-5">
       <p class="text-bodyLight whitespace-pre-line">
         {{
           summary ||

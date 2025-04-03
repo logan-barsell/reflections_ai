@@ -19,7 +19,7 @@
 
 /* CARDS */
 .card-container {
-  @apply w-full rounded-lg bg-accent sm:p-5 p-3;
+  @apply w-full rounded-lg bg-accent py-5 sm:px-12 sm:pb-8 px-5;
 }
 
 .card-wrapper {
@@ -31,7 +31,7 @@
 }
 
 .card-summary {
-  @apply text-bodyMed mb-8;
+  @apply text-labelReg mb-8 text-center;
 }
 
 .card-suggestion-label {
@@ -39,7 +39,7 @@
 }
 
 .card-suggestion-text {
-  @apply text-label;
+  @apply text-labelReg;
 }
 
 /* SELECTORS */

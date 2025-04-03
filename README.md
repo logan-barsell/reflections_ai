@@ -10,6 +10,16 @@ A calm, minimalist journaling experience designed to help users reflect on how t
 
 ---
 
+## 🖼️ Screenshots
+
+| Reflection Page                                    | Daily Summary                                | Weekly Insights                                |
+| -------------------------------------------------- | -------------------------------------------- | ---------------------------------------------- |
+| ![Reflection](./public/screenshots/reflection.png) | ![Summary](./public/screenshots/summary.png) | ![Insights](./public/screenshots/insights.png) |
+
+<sub>📸 _Demo content powered by localStorage + mock data_</sub>
+
+---
+
 ## 🌿 Design Approach
 
 - **Zen-inspired UI**: Clean typography, soft colors, rounded layouts, and whitespace-driven structure.
@@ -49,13 +59,21 @@ src/
 ├── composables/            # Reusable logic with Vue composition API
 │   ├── useReflection.ts
 │   ├── useTime.ts
-│   └── useAnimatedValues.ts
+│   ├── useAnimatedValues.ts
+│   └── useInView.ts
 │
 ├── constants/              # Shared config/meta values
 │   └── meta.ts             # Moods, moodMap, categories
 │
 ├── data/                   # Mock data and static JSON for prototyping
 │   └── dummyData.ts
+│
+├── layout/                 # App layout and structure
+│
+├── router/                 # App routes and navigation
+│   └── index.ts
+│
+├── utils/                  # General utility functions
 │
 ├── assets/                 # Fonts, icons, CSS, images
 │   ├── animations.css
