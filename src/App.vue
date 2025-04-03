@@ -19,7 +19,7 @@ watch(
 );
 </script>
 
-<template>
+<template class="bg-background">
   <Layout>
     <router-view />
     <Shimmer :show="shimmer" />

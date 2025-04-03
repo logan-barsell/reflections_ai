@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-background text-text font-sans">
+  <div class="min-h-screen">
     <Navbar />
     <main class="w-full max-w-[725px] sm:px-4 px-3 py-6 mx-auto">
       <slot />
