@@ -7,7 +7,7 @@
     >
       <div
         :key="currentTime"
-        class="w-[281px] h-[87px] text-time text-primary text-center"
+        class="w-[290px] h-[87px] text-time text-primary text-center"
       >
         {{ currentTime }}
       </div>
@@ -25,12 +25,7 @@
 
     <!-- Multiline Reflection Input -->
     <div class="mt-inputTop">
-      <textarea
-        v-model="reflectionText"
-        class="w-textArea max-w-full resize-none rounded-lg border border-border bg-transparent px-4 py-2 text-[15px] transition focus:outline-none hover:border-accent focus:border-accent"
-        style="height: 39px"
-        @input="autoGrow"
-      />
+      <TextAreaInput v-model="reflectionText" />
     </div>
 
     <!-- Mood Selector -->
@@ -67,7 +62,12 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { MoodSelector, CategorySelector } from '../components/selectors';
-import { ErrorMessage, Shimmer, SubmitButton } from '../components/ui';
+import {
+  ErrorMessage,
+  Shimmer,
+  SubmitButton,
+  TextAreaInput,
+} from '../components/ui';
 import { useTime, useReflection } from '../composables';
 
 const router = useRouter();
@@ -101,13 +101,6 @@ const handleMoodSelect = value => {
 
 const handleCategorySelect = value => {
   selectedCategory.value = value;
-  errorMessage.value = '';
-};
-
-const autoGrow = e => {
-  const el = e.target;
-  el.style.height = '39px';
-  el.style.height = el.scrollHeight + 'px';
   errorMessage.value = '';
 };
 </script>

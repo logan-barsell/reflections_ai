@@ -26,6 +26,7 @@ export function useReflection(
    * Handles validation, submission, and localStorage persistence of the reflection.
    */
   const submitReflection = (): void => {
+    console.log(reflectionText);
     const isMissingFields =
       !reflectionText.value || !selectedMood.value || !selectedCategory.value;
 
