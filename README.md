@@ -1,6 +1,6 @@
 # 🧘‍♂️ Reflections AI
 
-A calm, minimalist journaling experience designed to help users reflect on how they spend their time and how it makes them feel. This project was built as part of a take-home assignment for the Gun.io Design Engineer position.
+A calm, minimalist journaling experience designed to help users reflect on how they spend their time and how it makes them feel.
 
 ---
 
