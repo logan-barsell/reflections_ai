@@ -20,17 +20,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="summary-page">
-    <div class="sm:pt-[100px] pt-[50px] page-wrapper">
-      <p class="text-smallBold">
-        {{ today }}
-      </p>
+  <div class="sm:pt-[100px] pt-[50px] page-wrapper">
+    <!-- Today's Date -->
+    <p class="text-smallBold">
+      {{ today }}
+    </p>
 
-      <AISummaryCard
-        :summary="dailySummary.summary"
-        :reflections="dailySummary.reflections"
-      />
-    </div>
+    <!-- AI Daily Summary Card -->
+    <AISummaryCard
+      :summary="dailySummary.summary"
+      :reflections="dailySummary.reflections"
+    />
 
     <!-- Reflection Logs -->
     <div

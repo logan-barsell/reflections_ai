@@ -17,7 +17,7 @@
 
     <!-- Card Body -->
     <div
-      class="rounded-[12px] bg-primary px-reflectionPaddingX pb-reflectionPaddingBottom pt-reflectionPaddingTop"
+      class="rounded-[12px] bg-primary p-reflectionPadding pt-reflectionPaddingTop"
     >
       <!-- Category Title -->
       <p class="text-bodyBold text-center">

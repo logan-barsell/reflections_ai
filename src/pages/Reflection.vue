@@ -14,24 +14,24 @@
     </transition>
 
     <!-- 13px Spacer -->
-    <div class="sm:mt-promptSpacer">
+    <div class="sm:mt-spacer">
       <h2 class="sm:text-h2 text-subheader text-center">
         How have you spent your time today?
       </h2>
     </div>
 
     <!-- Prompt Text -->
-    <div class="mt-[14px]">
+    <div class="mt-spacer">
       <p class="section-subtitle">Write your reflection...</p>
     </div>
 
     <!-- Multiline Reflection Input -->
-    <div class="mt-inputTop">
+    <div class="mt-spacer">
       <TextAreaInput v-model="reflectionText" />
     </div>
 
     <!-- Mood Selector -->
-    <div class="sm:mt-selectorBtnTop mt-moodTagOffset flex justify-center">
+    <div class="sm:mt-buttonTop mt-moodTagOffset center-content">
       <MoodSelector
         :selected="selectedMood"
         @select="handleMoodSelect"
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Category Selector -->
-    <div class="mt-selectorBtnTop flex justify-center">
+    <div class="mt-buttonTop center-content">
       <CategorySelector
         :selected="selectedCategory"
         @select="handleCategorySelect"
@@ -47,7 +47,7 @@
     </div>
 
     <!-- Log Reflection Button -->
-    <div class="mt-buttonTop flex justify-center">
+    <div class="mt-buttonTop center-content">
       <SubmitButton
         icon="💭"
         label="Log Reflection"

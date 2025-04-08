@@ -10,6 +10,6 @@
         >Contact</a
       >
     </p>
-    <p class="mt-1">© {{ new Date().getFullYear() }} Reflection AI</p>
+    <p class="mt-1">© {{ new Date().getFullYear() }} Reflections AI</p>
   </footer>
 </template>

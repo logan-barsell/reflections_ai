@@ -8,7 +8,7 @@
     </p>
     <router-link
       to="/"
-      class="bg-primary text-background text-bodyBold px-6 py-3 rounded-lg hover:opacity-90 transition"
+      class="bg-primary text-background text-bodyBold px-6 py-3 rounded-[12px] hover:opacity-90 transition"
     >
       ← Go Back Home
     </router-link>

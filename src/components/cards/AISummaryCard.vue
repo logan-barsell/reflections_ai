@@ -1,7 +1,7 @@
 <template>
   <div class="relative mt-aiCardTop max-w-summary w-full">
     <!-- AI Summary Card -->
-    <div class="w-full rounded-lg bg-accent py-5 px-5">
+    <div class="w-full rounded-[12px] bg-accent py-5 px-5">
       <p class="text-bodyLight whitespace-pre-line">
         {{
           summary ||
@@ -9,7 +9,10 @@
 `
         }}
       </p>
-      <div class="whitespace-pre-line">
+      <div
+        v-if="reflections"
+        class="whitespace-pre-line"
+      >
         <p class="text-bodySemi mt-6">
           🧠 Reflections:
           <span class="text-bodyLight">{{ reflections || '' }}</span>

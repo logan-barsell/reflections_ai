@@ -7,7 +7,10 @@
     <div class="mt-[52px] text-center">
       <p class="text-bodySemi">💡 Tip of the Week</p>
       <p class="mt-3 section-description w-insights">
-        {{ weeklyTip?.content }}
+        {{
+          weeklyTip?.content ||
+          `“The more consistently you reflect, the more insight you’ll gain. Aim for progress, not perfection.”`
+        }}
       </p>
     </div>
 
@@ -33,9 +36,14 @@
     <!-- Habit Streak Section -->
     <LogRevealWrapper :delay="500">
       <div class="mt-streakTop text-center px-4 max-w-insights">
-        <h1 class="sm:text-h1 text-h2Bold mb-[7px]">{{ streak.header }}</h1>
+        <h1 class="sm:text-h1 text-h2Bold mb-[7px]">
+          {{ streak.header || `Let's Begin Your Reflection Journey` }}
+        </h1>
         <p class="text-subheader">
-          {{ streak.subheader }}
+          {{
+            streak.subheader ||
+            `“No reflections yet, but every habit starts with a first step. Take a moment to pause and check in with yourself.”`
+          }}
         </p>
       </div>
     </LogRevealWrapper>
