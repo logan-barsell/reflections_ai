@@ -59,7 +59,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -70,22 +70,23 @@ import {
   SubmitButton,
   TextAreaInput,
 } from '@components/ui';
-import { useTime, useReflection } from '@composables';
+import { useTime, useReflection } from '@composables/index';
+import { CategoryValue, MoodValue } from '@constants/meta';
 
 const router = useRouter();
-const shimmerActive = ref(false);
+const shimmerActive = ref<boolean>(false);
 
-const triggerShimmer = () => {
+const reflectionText = ref<string>('');
+const selectedMood = ref<MoodValue | null>(null);
+const selectedCategory = ref<CategoryValue | null>(null);
+const errorMessage = ref<string>('');
+
+const triggerShimmer = (): void => {
   shimmerActive.value = true;
   setTimeout(() => {
     router.push('/summary');
   }, 1200);
 };
-
-const reflectionText = ref('');
-const selectedMood = ref(null);
-const selectedCategory = ref(null);
-const errorMessage = ref('');
 
 const { currentTime } = useTime();
 const { submitReflection } = useReflection(
@@ -96,12 +97,12 @@ const { submitReflection } = useReflection(
   triggerShimmer
 );
 
-const handleMoodSelect = value => {
+const handleMoodSelect = (value: MoodValue): void => {
   selectedMood.value = value;
   errorMessage.value = '';
 };
 
-const handleCategorySelect = value => {
+const handleCategorySelect = (value: CategoryValue): void => {
   selectedCategory.value = value;
   errorMessage.value = '';
 };

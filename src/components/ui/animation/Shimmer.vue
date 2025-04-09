@@ -7,8 +7,8 @@
   </transition>
 </template>
 
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   show: {
     type: Boolean,
     required: true,

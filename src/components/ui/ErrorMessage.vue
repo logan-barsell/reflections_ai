@@ -13,8 +13,8 @@
   </transition>
 </template>
 
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   error: {
     type: String,
     required: false,

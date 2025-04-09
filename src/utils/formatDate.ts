@@ -1,4 +1,5 @@
-export function formatFullDate(date = new Date()) {
+// Format a full date as "Month Day, Year"
+export function formatFullDate(date: Date = new Date()): string {
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -6,7 +7,8 @@ export function formatFullDate(date = new Date()) {
   });
 }
 
-export function formatTime(d = new Date()) {
+// Format a time as "h:mm AM/PM"
+export function formatTime(d: Date | string = new Date()): string {
   const date = new Date(d);
   const hours = date.getHours();
   const minutes = date.getMinutes();

@@ -27,13 +27,9 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  summary: {
-    type: String,
-  },
-  reflections: {
-    type: String,
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  summary?: string;
+  reflections?: string;
+}>();
 </script>

@@ -1,9 +1,11 @@
 import { Ref } from 'vue';
+import { useReflectionStore } from '@stores/reflectionStore';
+import { ReflectionOptions } from '@type/Reflection';
 
 /**
  * Composable to handle reflection submission logic:
  * - Validates input fields
- * - Saves reflection to localStorage
+ * - Submits reflection to API
  * - Clears inputs
  * - Triggers optional UI feedback (like a shimmer animation)
  *
@@ -22,14 +24,17 @@ export function useReflection(
   errorMessage: Ref<string>,
   triggerShimmer: () => void
 ) {
-  /**
-   * Handles validation, submission, and localStorage persistence of the reflection.
-   */
-  const submitReflection = (): void => {
-    const isMissingFields =
-      !reflectionText.value || !selectedMood.value || !selectedCategory.value;
+  const store = useReflectionStore();
 
-    if (isMissingFields) {
+  /**
+   * Validates inputs and submits reflection to backend.
+   */
+  const submitReflection = async (): Promise<void> => {
+    if (
+      !reflectionText.value ||
+      !selectedMood.value ||
+      !selectedCategory.value
+    ) {
       errorMessage.value = 'Please complete all fields before submitting.';
       setTimeout(() => {
         errorMessage.value = '';
@@ -37,28 +42,25 @@ export function useReflection(
       return;
     }
 
-    // Create a new reflection entry
-    const reflection = {
+    const reflection: ReflectionOptions = {
       text: reflectionText.value.trim(),
       mood: selectedMood.value,
       category: selectedCategory.value,
-      timestamp: new Date().toISOString(),
     };
 
-    // Retrieve and update localStorage reflections
-    const stored = localStorage.getItem('reflections');
-    const previous = stored ? JSON.parse(stored) : [];
-    const updated = [reflection, ...previous];
-    localStorage.setItem('reflections', JSON.stringify(updated));
+    try {
+      await store.addReflection(reflection);
 
-    // Clear inputs and errors
-    reflectionText.value = '';
-    selectedMood.value = null;
-    selectedCategory.value = null;
-    errorMessage.value = '';
+      // Reset inputs
+      reflectionText.value = '';
+      selectedMood.value = null;
+      selectedCategory.value = null;
+      errorMessage.value = '';
 
-    // Trigger post-submit animation or transition
-    triggerShimmer();
+      triggerShimmer();
+    } catch (error: any) {
+      errorMessage.value = error.message || 'Submission failed. Try again.';
+    }
   };
 
   return { submitReflection };

@@ -1,4 +1,25 @@
-export const moods = [
+// constants/meta.ts
+
+// Individual mood structure
+export interface Mood {
+  value: MoodValue;
+  label: string;
+  emoji: string;
+}
+
+// All valid mood "values"
+export type MoodValue =
+  | 'happy'
+  | 'relaxed'
+  | 'focused'
+  | 'stressed'
+  | 'sad'
+  | 'energized'
+  | 'distracted'
+  | 'neutral';
+
+// Mood data list
+export const moods: Mood[] = [
   { value: 'happy', label: 'Happy', emoji: '🙂' },
   { value: 'relaxed', label: 'Relaxed', emoji: '😌' },
   { value: 'focused', label: 'Focused', emoji: '🧐' },
@@ -9,12 +30,28 @@ export const moods = [
   { value: 'neutral', label: 'Neutral', emoji: '😶' },
 ];
 
-export const moodMap = moods.reduce((acc, mood) => {
-  acc[mood.value] = { label: mood.label, emoji: mood.emoji };
-  return acc;
-}, {} as Record<string, { label: string; emoji: string }>);
+// Map for easy lookup
+export const moodMap: Record<MoodValue, { label: string; emoji: string }> =
+  moods.reduce((acc, mood) => {
+    acc[mood.value] = { label: mood.label, emoji: mood.emoji };
+    return acc;
+  }, {} as Record<MoodValue, { label: string; emoji: string }>);
 
-export const categories = [
+// Category structure
+export interface Category {
+  value: CategoryValue;
+  label: string;
+}
+
+export type CategoryValue =
+  | 'work'
+  | 'rest'
+  | 'social'
+  | 'active'
+  | 'mindful'
+  | 'creative';
+
+export const categories: Category[] = [
   { value: 'work', label: 'Work' },
   { value: 'rest', label: 'Rest' },
   { value: 'social', label: 'Social' },

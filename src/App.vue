@@ -1,12 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import Layout from '@layout/Layout.vue';
 import { Shimmer } from '@components/ui';
 
-const shimmer = ref(false);
+const shimmer = ref<boolean>(false);
 const router = useRouter();
 
+// Watch route changes to trigger shimmer animation
 watch(
   () => router.currentRoute.value.fullPath,
   () => {

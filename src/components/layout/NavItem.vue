@@ -12,10 +12,14 @@
   </router-link>
 </template>
 
-<script setup>
-defineProps({
-  label: String,
-  to: String,
-  active: Boolean,
-});
+<script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router';
+
+interface Props {
+  label: string;
+  to: RouteLocationRaw;
+  active: boolean;
+}
+
+defineProps<Props>();
 </script>

@@ -54,30 +54,38 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import NavItem from './NavItem.vue';
 
+interface NavItemType {
+  label: string;
+  to: string;
+}
+
 const route = useRoute();
 
-const navItems = [
+const navItems: NavItemType[] = [
   { label: 'Reflect', to: '/reflect' },
   { label: 'Summary', to: '/summary' },
   { label: 'Insights', to: '/insights' },
 ];
 
-const isActive = path => route.path === path;
+const isActive = (path: string): boolean => route.path === path;
 
-const centerItem = computed(() => {
+const centerItem = computed<NavItemType>(() => {
   return navItems.find(item => item.to === route.path) || navItems[0];
 });
 
-const flankingItems = computed(() => {
+const flankingItems = computed<NavItemType[]>(() => {
   return navItems.filter(item => item.to !== centerItem.value.to);
 });
 
-// Dynamically assign who flanks left/right
-const flankingLeft = computed(() => flankingItems.value[0]);
-const flankingRight = computed(() => flankingItems.value[1]);
+const flankingLeft = computed<NavItemType | undefined>(
+  () => flankingItems.value[0]
+);
+const flankingRight = computed<NavItemType | undefined>(
+  () => flankingItems.value[1]
+);
 </script>

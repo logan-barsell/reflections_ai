@@ -2,7 +2,7 @@
   <div class="relative mt-reflectionCardTop max-w-reflection w-full mx-auto">
     <!-- Top Left: Time -->
     <p class="absolute -top-reflectionLabelOffset left-0 text-h3">
-      {{ time }}
+      {{ formatTime(reflection.timestamp) }}
     </p>
 
     <!-- Top Right: Mood Label (non-clickable) -->
@@ -21,7 +21,7 @@
     >
       <!-- Category Title -->
       <p class="text-bodyBold text-center">
-        {{ category }}
+        {{ capitalize(reflection.category) }}
       </p>
 
       <!-- Spacer -->
@@ -29,21 +29,18 @@
 
       <!-- Reflection Text -->
       <p class="text-bodyReg whitespace-pre-line">
-        {{ text }}
+        {{ reflection.text }}
       </p>
     </div>
   </div>
 </template>
 
-<script setup>
-defineProps({
-  time: { type: String, required: true },
-  mood: {
-    type: Object,
-    required: true,
-    // Example: { emoji: '🙂', label: 'Happy' }
-  },
-  category: { type: String, required: true },
-  text: { type: String, required: true },
-});
+<script setup lang="ts">
+import { computed } from 'vue';
+import { moodMap, MoodValue } from '@constants/meta';
+import { Reflection } from '@type/Reflection';
+import { capitalize, formatTime } from '@utils/index';
+
+const props = defineProps<{ reflection: Reflection }>();
+const mood = computed(() => moodMap[props.reflection.mood as MoodValue]);
 </script>

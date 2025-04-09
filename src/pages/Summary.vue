@@ -1,22 +1,32 @@
-<script setup>
+<script setup lang="ts">
+import { onMounted, computed } from 'vue';
+import { useReflectionStore, useAIGenerationStore } from '@stores/index';
+
 import { AISummaryCard, ReflectionLogCard } from '@components/cards';
 import { LogRevealWrapper } from '@components/ui';
-import { moodMap } from '@constants/meta';
-import { formatFullDate, formatTime, capitalize } from '@utils';
-import { dummyReflections, dailySummary } from '@data/dummyData';
 
-import { ref, onMounted } from 'vue';
+import { formatFullDate } from '@utils/index';
 
 const today = formatFullDate();
 
-const reflections = ref([]);
+const store = useReflectionStore();
+const aiStore = useAIGenerationStore();
 
+// Fetch reflections on page mount
 onMounted(() => {
-  const stored = localStorage.getItem('reflections');
-  reflections.value = stored
-    ? [...JSON.parse(stored), ...dummyReflections]
-    : dummyReflections;
+  store.fetchReflections();
+  aiStore.fetchDailySummary();
 });
+
+const reflections = computed(() => store.reflections);
+// TODO: Reflections loading and error UI
+// const reflectionsLoading = computed(() => store.loading);
+// const reflectionsError = computed(() => store.error);
+const summary = computed(() => aiStore.summary?.summary);
+const reflectionsNote = computed(() => aiStore.summary?.reflections);
+// TODO: summary loading and error UI
+// const summaryError = computed(() => aiStore.error);
+// const summaryLoading = computed(() => aiStore.loading);
 </script>
 
 <template>
@@ -28,8 +38,8 @@ onMounted(() => {
 
     <!-- AI Daily Summary Card -->
     <AISummaryCard
-      :summary="dailySummary.summary"
-      :reflections="dailySummary.reflections"
+      :summary="summary"
+      :reflections="reflectionsNote"
     />
 
     <!-- Reflection Logs -->
@@ -42,12 +52,7 @@ onMounted(() => {
         :key="entry.timestamp"
       >
         <LogRevealWrapper :delay="index * 100">
-          <ReflectionLogCard
-            :time="formatTime(entry.timestamp)"
-            :mood="moodMap[entry.mood]"
-            :category="capitalize(entry.category)"
-            :text="entry.text"
-          />
+          <ReflectionLogCard :reflection="entry" />
           <div v-if="index !== reflections.length - 1">
             <div
               class="my-dividerGap max-w-divider w-full border-t border-border"
