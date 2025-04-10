@@ -21,7 +21,6 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "include": ["src", "vite-env.d.ts"]
+    "forceConsistentCasingInFileNames": true
   }
 }

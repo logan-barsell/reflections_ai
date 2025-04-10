@@ -12,3 +12,6 @@ export { default as SubmitButton } from './buttons/SubmitButton.vue';
 
 // Inputs
 export { default as TextAreaInput } from './inputs/TextAreaInput.vue';
+
+// Loading
+export { default as Loader } from './loading/Loader.vue';

@@ -7,35 +7,37 @@ import { AIInsights } from '@type/Insights';
 export const useAIGenerationStore = defineStore('aiGeneration', {
   state: () => ({
     summary: null as DailySummary | null,
+    summaryLoading: true,
+    summaryError: null as string | null,
     insights: null as AIInsights | null,
-    loading: false,
-    error: null as string | null,
+    insightsLoading: true,
+    insightsError: null as string | null,
   }),
 
   actions: {
     async fetchDailySummary() {
-      this.loading = true;
-      this.error = null;
+      this.summaryLoading = true;
+      this.summaryError = null;
       try {
         const res = await getDailySummary();
         this.summary = res;
       } catch (error: any) {
-        this.error = error.message || 'Failed to fetch daily summary';
+        this.summaryError = error.message || 'Failed to fetch daily summary';
       } finally {
-        this.loading = false;
+        this.summaryLoading = false;
       }
     },
 
     async fetchInsights() {
-      this.loading = true;
-      this.error = null;
+      this.insightsLoading = true;
+      this.insightsError = null;
       try {
         const res = await getWeeklyInsights();
         this.insights = res;
       } catch (error: any) {
-        this.error = error.message || 'Failed to fetch weekly insights';
+        this.insightsError = error.message || 'Failed to fetch weekly insights';
       } finally {
-        this.loading = false;
+        this.insightsLoading = false;
       }
     },
   },

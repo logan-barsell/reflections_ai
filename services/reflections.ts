@@ -7,7 +7,8 @@ export const getReflections = async (): Promise<ReflectionResponse> => {
     return response.data;
   } catch (error: any) {
     throw new Error(
-      error?.response?.data?.message || 'Failed to fetch reflections'
+      error?.response?.data?.message ||
+        'Error retrieving reflections. Please try again.'
     );
   }
 };
@@ -18,7 +19,8 @@ export const postReflection = async (data: ReflectionOptions) => {
     return response.data;
   } catch (error: any) {
     throw new Error(
-      error?.response?.data?.message || 'Failed to submit your reflection'
+      error?.response?.data?.message ||
+        'Error logging reflection. Please try again.'
     );
   }
 };

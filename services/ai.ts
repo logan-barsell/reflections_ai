@@ -8,7 +8,8 @@ export const getDailySummary = async (): Promise<DailySummary> => {
     return res.data;
   } catch (error: any) {
     throw new Error(
-      error?.response?.data?.message || 'Failed to fetch daily summary'
+      error?.response?.data?.message ||
+        'Error retrieiving AI Summary. Please try again.'
     );
   }
 };
@@ -19,7 +20,8 @@ export const getWeeklyInsights = async (): Promise<AIInsights> => {
     return res.data;
   } catch (error: any) {
     throw new Error(
-      error?.response?.data?.message || 'Failed to fetch weekly insights'
+      error?.response?.data?.message ||
+        'Error retrieving AI Insights. Please try again.'
     );
   }
 };

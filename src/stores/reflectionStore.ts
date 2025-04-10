@@ -6,7 +6,7 @@ export const useReflectionStore = defineStore('reflection', {
   state: () => ({
     reflections: [] as Reflection[],
     reflectionCount: 0,
-    loading: false,
+    loading: true,
     error: null as string | null,
   }),
   actions: {
