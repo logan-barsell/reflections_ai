@@ -26,23 +26,14 @@
     </div>
 
     <!-- Multiline Reflection Input -->
-    <div class="mt-spacer">
-      <TextAreaInput v-model="reflectionText" />
-    </div>
-
-    <!-- Mood Selector -->
-    <div class="sm:mt-buttonTop mt-moodTagOffset center-content">
-      <MoodSelector
-        :selected="selectedMood"
-        @select="handleMoodSelect"
-      />
-    </div>
-
-    <!-- Category Selector -->
-    <div class="mt-buttonTop center-content">
-      <CategorySelector
-        :selected="selectedCategory"
-        @select="handleCategorySelect"
+    <div class="mt-spacer w-full @container">
+      <ReflectionForm
+        :reflectionText="reflectionText"
+        :selectedMood="selectedMood"
+        :selectedCategory="selectedCategory"
+        :onMoodSelect="handleMoodSelect"
+        :onCategorySelect="handleCategorySelect"
+        :onUpdateReflectionText="(val: string) => (reflectionText = val)"
       />
     </div>
 
@@ -62,14 +53,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-
-import { MoodSelector, CategorySelector } from '@components/selectors';
-import {
-  ErrorMessage,
-  Shimmer,
-  SubmitButton,
-  TextAreaInput,
-} from '@components/ui';
+import { ReflectionForm } from '@components/forms';
+import { ErrorMessage, Shimmer, SubmitButton } from '@components/ui';
 import { useTime, useReflection } from '@composables/index';
 import { CategoryValue, MoodValue } from '@constants/meta';
 

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sm:max-w-[527px] max-w-[300px] selector-grid sm:gap-x-[42px] gap-x-[20px] sm:gap-y-[33px] gap-y-[17px]"
+    class="mx-auto @sm:max-w-[527px] max-w-[300px] selector-grid @sm:gap-x-[42px] gap-x-[20px] @sm:gap-y-[33px] gap-y-[17px]"
   >
     <CategoryButton
       v-for="category in categories"

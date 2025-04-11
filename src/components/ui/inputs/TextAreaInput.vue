@@ -3,7 +3,7 @@
     ref="textareaRef"
     v-model="localValue"
     :placeholder="placeholder"
-    class="textarea"
+    class="textarea @sm:max-w-textAreaLg"
     :style="{ height: baseHeight + 'px' }"
     @input="autoGrow"
   />

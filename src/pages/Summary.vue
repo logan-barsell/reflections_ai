@@ -12,7 +12,7 @@
       </template>
 
       <template v-else>
-        <div>
+        <div class="page-wrapper">
           <!-- Today's Date -->
           <p class="text-smallBold">
             {{ today }}
@@ -21,7 +21,7 @@
           <!-- Summary Error -->
           <div
             v-if="summaryError"
-            class="mt-6 mb-2"
+            class="mb-2"
           >
             <ErrorMessage :error="summaryError" />
           </div>
@@ -42,7 +42,7 @@
 
           <!-- Reflection Logs -->
           <div
-            class="py-[76px]"
+            class="py-[50px]"
             v-if="reflections.length > 0"
           >
             <template
@@ -52,16 +52,14 @@
               <LogRevealWrapper :delay="index * 100">
                 <ReflectionLogCard :reflection="entry" />
                 <div v-if="index !== reflections.length - 1">
-                  <div
-                    class="my-dividerGap max-w-divider w-full border-t border-border"
-                  />
+                  <div class="max-w-divider w-full border-t border-border" />
                 </div>
               </LogRevealWrapper>
             </template>
           </div>
           <div
             v-else
-            class="mt-10 text-muted text-sm text-center"
+            class="mt-12 text-muted text-sm text-center"
           >
             No reflections logged yet.
           </div>

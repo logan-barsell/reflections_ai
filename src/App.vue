@@ -13,7 +13,7 @@ const router = useRouter();
 const aiStore = useAIGenerationStore();
 const reflectionStore = useReflectionStore();
 
-// ✅ Handle initial page load (e.g., refresh on /reflect)
+// Handle initial page load (e.g., refresh on /reflect)
 onMounted(() => {
   const currentPath = router.currentRoute.value.fullPath;
   const home = currentPath.includes('reflect') || currentPath === '/';

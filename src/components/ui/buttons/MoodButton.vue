@@ -1,14 +1,14 @@
 <template>
   <button
     :class="[
-      'mood-selector-button',
+      'mood-selector-button @sm:h-[38px] @sm:px-[38px] @sm:text-bodyMed',
       isSelected
         ? 'bg-[rgba(217,217,217,0.5)] border-border'
         : 'bg-transparent border-border hover:bg-[rgba(217,217,217,0.5)]',
     ]"
     @click="$emit('click')"
   >
-    <span class="mr-2 sm:text-lg text-sm">{{ icon }}</span>
+    <span class="mr-2 @sm:text-lg text-sm">{{ icon }}</span>
     <span>{{ label }}</span>
   </button>
 </template>

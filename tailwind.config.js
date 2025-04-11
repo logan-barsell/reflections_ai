@@ -1,9 +1,17 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-
+import containerQueries from '@tailwindcss/container-queries';
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,css}'],
+
   theme: {
     extend: {
+      containers: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
       colors: {
         background: '#F9FAFB',
         primary: '#A0C4FF',
@@ -11,9 +19,11 @@ export default {
         text: '#1F2937',
         muted: '#6B7280',
         border: '#E5E7EB',
+        errorPrimary: '#DC2626',
+        errorSecondary: '#FEE2E2',
       },
       fontFamily: {
-        sans: ['Manrope', ...defaultTheme.fontFamily.sans],
+        sans: ['Manrope'],
       },
       fontSize: {
         h1: ['32px', { fontWeight: '700' }],
@@ -33,6 +43,7 @@ export default {
         label: ['14px', { fontWeight: '500' }],
         labelSemiBold: ['14px', { fontWeight: '600' }],
         labelBold: ['14px', { fontWeight: '700' }],
+        labelMed: ['14px', { fontWeight: '500' }],
         labelReg: ['14px', { fontWeight: '400' }],
         labelLight: ['14px', { fontWeight: '300' }],
         subheader: ['20px', { fontWeight: '300' }],
@@ -40,9 +51,9 @@ export default {
       spacing: {
         insightsCard: '675px',
         summaryCard: '500px',
-        textAreaLg: '560px',
+
         reflectionCard: '480px',
-        textAreaSm: '270px',
+
         streakTop: '150px',
         reflectionPageTop: '120px',
         barLabel: '100px',
@@ -55,7 +66,7 @@ export default {
         reflectionLabelOffset: '28px',
         barHeight: '27px',
         reflectionPadding: '25px',
-        reflectionCardTop: '20px',
+        reflectionCardy: '50px',
         aiCardTop: '15px',
         spacer: '12px',
         reflectionPaddingTop: '5px',
@@ -63,10 +74,12 @@ export default {
       maxWidth: {
         divider: '770px',
         insights: '675px',
+        textAreaLg: '560px',
         summary: '500px',
         reflection: '480px',
+        textAreaSm: '356px',
       },
     },
   },
-  plugins: [],
+  plugins: [containerQueries],
 };

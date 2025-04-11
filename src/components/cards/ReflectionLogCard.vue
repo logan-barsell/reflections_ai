@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mt-reflectionCardTop max-w-reflection w-full mx-auto">
+  <div class="relative my-reflectionCardy max-w-reflection w-full mx-auto">
     <!-- Top Left: Time -->
     <p class="absolute -top-reflectionLabelOffset left-0 text-h3">
       {{ formatTime(reflection.timestamp) }}
@@ -32,15 +32,47 @@
         {{ reflection.text }}
       </p>
     </div>
+
+    <!-- Bottom Left: Edit / Remove -->
+    <div class="absolute left-3 flex gap-[30px]">
+      <TextButton
+        label="Edit"
+        @click="showEditModal = true"
+      />
+      <TextButton
+        label="Remove"
+        @click="showRemoveModal = true"
+      />
+    </div>
+
+    <!-- Remove Modal -->
+    <RemoveReflection
+      v-if="showRemoveModal"
+      :id="reflection.id"
+      @close="showRemoveModal = false"
+    />
+
+    <!-- Edit Modal -->
+    <EditReflection
+      v-if="showEditModal"
+      :reflection="reflection"
+      @close="showEditModal = false"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import { RemoveReflection, EditReflection } from '@components/modal/index';
+import { TextButton } from '@components/ui/index';
 import { moodMap, MoodValue } from '@constants/meta';
 import { Reflection } from '@type/Reflection';
 import { capitalize, formatTime } from '@utils/index';
 
 const props = defineProps<{ reflection: Reflection }>();
+
+const showRemoveModal = ref(false);
+const showEditModal = ref(false);
+
 const mood = computed(() => moodMap[props.reflection.mood as MoodValue]);
 </script>
