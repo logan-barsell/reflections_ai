@@ -1,6 +1,13 @@
 <template>
   <button
-    :class="['submit-button', sizes[size], colors[color]]"
+    type="button"
+    :disabled="disabled"
+    :class="[
+      'submit-button',
+      sizes[size],
+      colors[color],
+      disabled ? 'disabled-button' : '',
+    ]"
     @click="$emit('click')"
   >
     <span
@@ -13,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   label: { type: String, default: 'Submit' },
   icon: { type: String, default: '' },
   size: {
@@ -24,6 +31,7 @@ const props = defineProps({
     type: String as () => 'dark' | 'gray' | 'red',
     default: 'dark',
   },
+  disabled: { type: Boolean, default: false },
 });
 
 defineEmits(['click']);

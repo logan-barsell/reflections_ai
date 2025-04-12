@@ -63,6 +63,10 @@
   @apply flex items-center justify-center rounded-md transition hover:opacity-90;
 }
 
+.disabled-button {
+  @apply opacity-50 cursor-default hover:opacity-50;
+}
+
 .input {
   @apply rounded-lg border border-border bg-transparent px-4 py-2 text-labelReg text-text transition focus:outline-none hover:border-accent focus:border-accent;
 }

@@ -5,10 +5,11 @@
     submitText="Remove"
     cancelText="Cancel"
     @submit="handleRemove"
-    @cancel="emit('close')"
+    @cancel="handleCancel"
     :danger="true"
   >
-    <p class="text-subheader text-center">
+    <ErrorText :message="reflectionStore.removingError" />
+    <p class="text-subheader text-center mt-4">
       Are you sure you want to remove this reflection? This action cannot be
       undone.
     </p>
@@ -17,6 +18,7 @@
 
 <script setup lang="ts">
 import { Modal } from '@components/modal/index';
+import { ErrorText } from '@components/ui/index';
 import { useReflectionStore } from '@stores/index';
 
 const props = defineProps<{ id: string }>();
@@ -24,9 +26,15 @@ const emit = defineEmits<{ (e: 'close'): void }>();
 
 const reflectionStore = useReflectionStore();
 
-const handleRemove = () => {
-  // reflectionStore.removeReflection(props.id);
-  console.log('REMOVING REFLECTION', props.id);
+const handleRemove = async () => {
+  await reflectionStore.removeReflection(props.id);
+  if (!reflectionStore.removingError) {
+    emit('close');
+  }
+};
+
+const handleCancel = () => {
+  reflectionStore.removingError = '';
   emit('close');
 };
 </script>

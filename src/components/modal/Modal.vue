@@ -34,6 +34,7 @@
             :color="danger ? 'red' : 'dark'"
             size="sm"
             @click="handleSubmit"
+            :disabled="disabled"
           />
         </div>
       </div>
@@ -50,6 +51,7 @@ defineProps<{
   submitText?: string;
   cancelText?: string;
   danger?: boolean;
+  disabled?: boolean;
 }>();
 
 const emit = defineEmits<{

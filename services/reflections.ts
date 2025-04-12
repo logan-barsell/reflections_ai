@@ -29,3 +29,24 @@ export const postReflection = async (data: ReflectionOptions) => {
     );
   }
 };
+
+export const deleteReflection = async (id: string): Promise<void> => {
+  try {
+    await apiClient.delete(`/reflections/${id}`);
+  } catch (error: any) {
+    throw new Error(
+      error?.response?.data?.message || 'Error deleting reflection.'
+    );
+  }
+};
+
+export const updateReflection = async (id: string, data: ReflectionOptions) => {
+  try {
+    const response = await apiClient.put(`/reflections/${id}`, data);
+    return response.data;
+  } catch (error: any) {
+    throw new Error(
+      error?.response?.data?.message || 'Error updating reflection.'
+    );
+  }
+};

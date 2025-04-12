@@ -78,6 +78,6 @@ export const insights = {
 
 export const streak = {
   header: "You're Building a Great Habit",
-  subheader:
+  subHeader:
     "Nice streak! You've logged a reflection 6 days in a row. You're creating a mindful rhythm.",
 };

@@ -10,6 +10,7 @@ export { default as TextButton } from './buttons/TextButton.vue';
 
 // Error
 export { default as ErrorMessage } from './error/ErrorMessage.vue';
+export { default as ErrorText } from './error/ErrorText.vue';
 
 // Inputs
 export { default as TextAreaInput } from './inputs/TextAreaInput.vue';

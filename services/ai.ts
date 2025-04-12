@@ -1,11 +1,13 @@
 import apiClient from './api';
 import { DailySummary } from '@type/DailySummary';
 import { AIInsights } from '@type/Insights';
+import { dailySummary, insights, weeklyTip, streak } from '@data/dummyData';
 
 export const getDailySummary = async (): Promise<DailySummary> => {
   try {
-    const res = await apiClient.get('/summary');
-    return res.data;
+    // const res = await apiClient.get('/summary');
+    // return res.data;
+    return dailySummary; // For testing purposes
   } catch (error: any) {
     throw new Error(
       error?.response?.data?.message ||
@@ -16,8 +18,14 @@ export const getDailySummary = async (): Promise<DailySummary> => {
 
 export const getWeeklyInsights = async (): Promise<AIInsights> => {
   try {
-    const res = await apiClient.get('/insights/weekly');
-    return res.data;
+    // const res = await apiClient.get('/insights/weekly');
+    // return res.data;
+    return {
+      mood: insights.mood,
+      activity: insights.activity,
+      streak: streak,
+      tipOfTheWeek: weeklyTip.content,
+    };
   } catch (error: any) {
     throw new Error(
       error?.response?.data?.message ||
