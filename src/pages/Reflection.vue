@@ -26,8 +26,9 @@
     </div>
 
     <!-- Multiline Reflection Input -->
-    <div class="mt-spacer w-full @container">
+    <div class="w-full @container">
       <ReflectionForm
+        variant="page"
         :reflectionText="reflectionText"
         :selectedMood="selectedMood"
         :selectedCategory="selectedCategory"
@@ -55,7 +56,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { ReflectionForm } from '@components/forms';
 import { ErrorMessage, Shimmer, SubmitButton } from '@components/ui';
-import { useTime, useReflection } from '@composables/index';
+import { useTime, useReflection, useTimedError } from '@composables/index';
 import { CategoryValue, MoodValue } from '@constants/meta';
 
 const router = useRouter();
@@ -64,7 +65,7 @@ const shimmerActive = ref<boolean>(false);
 const reflectionText = ref<string>('');
 const selectedMood = ref<MoodValue | null>(null);
 const selectedCategory = ref<CategoryValue | null>(null);
-const errorMessage = ref<string>('');
+const { errorMessage, setError } = useTimedError();
 
 const triggerShimmer = (): void => {
   shimmerActive.value = true;
@@ -78,7 +79,7 @@ const { submitReflection } = useReflection(
   reflectionText,
   selectedMood,
   selectedCategory,
-  errorMessage,
+  setError,
   triggerShimmer
 );
 

@@ -12,6 +12,7 @@
       <ErrorText :message="reflectionStore.updatingError" />
       <!-- Multiline Reflection Input -->
       <ReflectionForm
+        variant="modal"
         :reflectionText="reflectionText"
         :selectedMood="selectedMood"
         :selectedCategory="selectedCategory"
