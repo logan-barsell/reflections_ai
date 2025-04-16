@@ -9,7 +9,21 @@
         class="underline hover:text-text"
         >Contact</a
       >
+      |
+      <a
+        href="#"
+        class="underline hover:text-text"
+        @click="logout"
+        >Logout</a
+      >
     </p>
     <p class="mt-1">© {{ new Date().getFullYear() }} Reflections AI</p>
   </footer>
 </template>
+<script setup lang="ts">
+import { useAuthStore } from '@stores/index';
+const auth = useAuthStore();
+const logout = () => {
+  auth.logout();
+};
+</script>

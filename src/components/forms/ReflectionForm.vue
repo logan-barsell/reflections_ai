@@ -53,7 +53,7 @@ import { MoodSelector, CategorySelector } from '@components/selectors';
 import { TextAreaInput } from '@components/ui';
 import { MoodValue, CategoryValue } from '@constants/meta';
 
-const props = defineProps<{
+defineProps<{
   reflectionText: string;
   selectedMood: string | null;
   selectedCategory: string | null;

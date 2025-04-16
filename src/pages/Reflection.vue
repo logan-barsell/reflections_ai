@@ -55,7 +55,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { ReflectionForm } from '@components/forms';
-import { ErrorMessage, Shimmer, SubmitButton } from '@components/ui';
+import { ErrorMessage, Shimmer, SubmitButton } from '@components/ui/index';
 import { useTime, useReflection, useTimedError } from '@composables/index';
 import { CategoryValue, MoodValue } from '@constants/meta';
 

@@ -57,6 +57,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useAuthStore } from '@stores/index';
 import NavItem from './NavItem.vue';
 
 interface NavItemType {
@@ -65,21 +66,32 @@ interface NavItemType {
 }
 
 const route = useRoute();
+const auth = useAuthStore();
 
-const navItems: NavItemType[] = [
-  { label: 'Reflect', to: '/reflect' },
-  { label: 'Summary', to: '/summary' },
-  { label: 'Insights', to: '/insights' },
-];
+const navItems = computed<NavItemType[]>(() =>
+  auth.isAuthenticated
+    ? [
+        { label: 'Reflect', to: '/reflect' },
+        { label: 'Summary', to: '/summary' },
+        { label: 'Insights', to: '/insights' },
+      ]
+    : [
+        { label: 'Home', to: '/home' },
+        { label: 'Sign In', to: '/auth' },
+        { label: 'Support', to: '/support' },
+      ]
+);
 
 const isActive = (path: string): boolean => route.path === path;
 
 const centerItem = computed<NavItemType>(() => {
-  return navItems.find(item => item.to === route.path) || navItems[0];
+  return (
+    navItems.value.find(item => item.to === route.path) || navItems.value[0]
+  );
 });
 
 const flankingItems = computed<NavItemType[]>(() => {
-  return navItems.filter(item => item.to !== centerItem.value.to);
+  return navItems.value.filter(item => item.to !== centerItem.value.to);
 });
 
 const flankingLeft = computed<NavItemType | undefined>(

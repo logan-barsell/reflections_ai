@@ -1,31 +1,43 @@
 import { apiClient } from './api';
 
-async function logIn(email: string, password: string) {
+export interface AuthOptions {
+  email: string;
+  password: string;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+}
+
+const USER = {
+  id: '12345',
+  email: 'loganjbars@gmail.com',
+  name: 'Logan Barsell',
+};
+
+async function logIn({ email, password }: AuthOptions): Promise<User> {
   try {
-    const response = await apiClient.post('/auth/login', {
-      email,
-      password,
-    });
-    return response.data;
+    // const response = await apiClient.post('/auth/login', {
+    //   email,
+    //   password,
+    // });
+    // return response.data;
+    return USER;
   } catch (error: any) {
     throw new Error(error.response?.data?.message || 'Login failed');
   }
 }
 
-async function signUp(
-  email: string,
-  password: string,
-  firstName: string,
-  lastName: string
-) {
+async function signUp({ email, password }: AuthOptions) {
   try {
-    const response = await apiClient.post('/auth/signup', {
-      email,
-      password,
-      firstName,
-      lastName,
-    });
-    return response.data;
+    // const response = await apiClient.post('/auth/signup', {
+    //   email,
+    //   password,
+    // });
+    // return response.data;
+    return USER;
   } catch (error: any) {
     throw new Error(error.response?.data?.message || 'Sign Up failed');
   }
@@ -33,7 +45,8 @@ async function signUp(
 
 async function logOut() {
   try {
-    await apiClient.post('/auth/logout');
+    // await apiClient.post('/auth/logout');
+    return;
   } catch (error: any) {
     throw new Error(error.response?.data?.message || 'Logout failed');
   }

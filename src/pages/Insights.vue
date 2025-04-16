@@ -12,7 +12,7 @@
       </template>
 
       <template v-else>
-        <div>
+        <div class="w-full">
           <!-- Weekly Header -->
           <h2 class="section-title">Weekly Insights</h2>
 

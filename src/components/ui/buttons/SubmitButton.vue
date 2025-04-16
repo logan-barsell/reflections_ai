@@ -28,7 +28,7 @@ defineProps({
     default: 'md',
   },
   color: {
-    type: String as () => 'dark' | 'gray' | 'red',
+    type: String as () => 'dark' | 'gray' | 'red' | 'primary',
     default: 'dark',
   },
   disabled: { type: Boolean, default: false },
@@ -46,5 +46,6 @@ const colors = {
   dark: 'bg-text text-background',
   gray: 'bg-muted text-background',
   red: 'bg-errorPrimary text-background',
+  primary: 'bg-primary text-background',
 };
 </script>
